@@ -1,35 +1,43 @@
-.attribution { 
-    font-size: 11px; 
-    text-align: center; 
-}
-.attribution a { 
-    color: hsl(228, 45%, 44%); 
-}
-
 body {
-    font-family: RedHatDisplay !important;
+    font-family: 'Red Hat Display', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
 }
 
 #second-img {
-    transform: rotate(180deg) translateY(180px);
-    opacity: 0.7;
+    transform: rotate(180deg) translateY(42%);
+    opacity: 0.75;
 }
 
-.body-container {
+#body-conatiner {
     position: relative;
 }
 
-.card-container {
-    box-shadow: 1px 1px 5px #ccc;
-    border-radius: 20px;
-    max-width: min-content;
-    overflow: hidden;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
+#body-container > img {
+    width: 100%;
 }
 
+.mobile-bg {
+    display: none;
+}
+
+.card-container {
+    animation: fade-down 0.75s forwards;
+    box-shadow: 0px 25px 35px -35px hsla(224, 23%, 55%, 0.644);
+    border-radius: 20px;
+    height: 80%;
+    overflow: hidden;
+    position: absolute;
+    opacity: 0; 
+    transform: translateY(-60%) translateX(-50%);
+    top: 50%;
+    left: 50%;
+    width: 25%;
+}
+.card-container > img {
+    width: 100%;
+}
 #order-summary {
     background-color: #fff;
     padding: 40px;
@@ -40,24 +48,27 @@ body {
 #order-summary p {
     margin: auto;
     padding: 15px;
+    font-size: 0.9em;
     width: 90%;
     color: rgb(158, 158, 158);
 }
 
 #order-summary h1 {
     color: hsl(223, 47%, 23%);
+    font-size: 1.55em;
+    font-weight: 900;
     margin: 0;
 }
 
 #order-summary > button {
     border: 0;
     border-radius: 10px;
-    background-color: blue;
-    box-shadow: 1px 20px 10px rgba(238, 238, 238, 0.658);
+    background-color: hsl(245, 75%, 52%);
+    box-shadow: 0px 22.5px 10px 4px  hsla(224, 23%, 55%, 0.135);
     color: #fff;
     font-weight: 700;
     margin: 30px 0px 20px 0px;
-    padding: 17.5px 0px;
+    padding: 12.5px 0px;
     transition: background-color 0.5s;
     width: 100%;
 }
@@ -72,7 +83,7 @@ body {
     background-color: rgba(236, 237, 240, 0.349);
     display: flex;
     flex-direction: row;
-    padding: 20px;
+    padding: 15px 20px;
 }
 
 .order-plan > div {
@@ -85,11 +96,12 @@ body {
 }
 
 .order-plan > span {
-    color: blue;
+    color: hsl(245, 75%, 52%);
     display: flex;
     justify-content: center;
     flex-direction: column;
     font-weight: 700;
+    font-size: 0.75em;
     text-decoration: underline;
     transition: all 0.5s;
 }
@@ -117,15 +129,36 @@ body {
 
 #plan-price {
     color: grey;
+    font-size: 0.9em;
     font-weight: 500;
 }
 
 #plan-type {
-    color: darkblue;
+    color: hsl(223, 47%, 23%);
+    font-size: 0.9em;
     font-weight: 900;
 }
 
-@font-face {
-    font-family: RedHatDisplay;
-    src: url(RedHatDisplay-VariableFont_wght.ttf);
+@media only screen and (max-width: 420px) {
+    .card-container {
+        height: 67.5%;
+        width: 90%;
+    }
+
+    #body-container > img {
+        height: 65vh;
+    }
+
+    .desktop-bg {
+        display: none;
+    }
+
+    .mobile-bg {
+        display: initial;
+    }
 }
+  
+@keyframes fade-down {
+    from {opacity: 0; transform: translateY(-60%) translateX(-50%);}
+    to {opacity: 1; transform: translateY(-50%) translateX(-50%);}
+  }
