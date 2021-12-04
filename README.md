@@ -21,9 +21,7 @@ This is a solution to the [Order summary challenge on Frontend Mentor](https://w
 
 Users should be able to:
 
-- View the optimal layout for the site depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Switch between viewing Daily, Weekly, and Monthly stats
+- See hover states for interactive elements
 
 ### Screenshot
 
